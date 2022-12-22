@@ -1,0 +1,2 @@
+mongodb+srv://Samuel:ad6681dbsa@cluster0.4uolf.mongodb.net/fuelmeapi?retryWrites=true&w=majority
+my models
