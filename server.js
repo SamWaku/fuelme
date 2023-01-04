@@ -84,7 +84,7 @@ app.use(cors({
 )
 
 const PORT = process.env.PORT
-const MongoLocalURI = process.env.MongoLocalURI
+const MongoLocalURI = process.env.MongoRemoteURI
 
 //entrance
 app.get('/', (req,res) => {
