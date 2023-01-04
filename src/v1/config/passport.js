@@ -16,7 +16,7 @@ module.exports = function(passport) {
     passport.use(new GoogleStrategy({
         clientID: clientID,
         clientSecret: clientSecret,
-        callbackURL:"https://fuelme.samwaku.com/api/user/auth/google/callback"
+        callbackURL:"http://fuelme.samwaku.com/api/user/auth/google/callback"
     }, 
     async (accessToken, refreshToken, profile, done) => {
         const newUser = {
