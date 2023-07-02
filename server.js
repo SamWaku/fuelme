@@ -70,7 +70,6 @@ const specs = swaggerJsDoc(options)
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs))
 
 app.use(logger("dev"));
-
 dotenv.config();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:true }));
@@ -84,7 +83,7 @@ app.use(cors({
 )
 
 const PORT = process.env.PORT
-const MongoLocalURI = process.env.MongoRemoteURI
+const MongoLocalURI = process.env.MongoLocalURI
 
 //entrance
 app.get('/', (req,res) => {
@@ -97,6 +96,7 @@ app.get('/', (req,res) => {
 const db = require('./src/v1/config/key');
 const swaggerJSDoc = require("swagger-jsdoc");
 
+mongoose.set('strictQuery',false);
 mongoose
         .connect(MongoLocalURI, { useUnifiedTopology:true, useNewUrlParser:true,})
         .then(() => console.log("connected to db"))
